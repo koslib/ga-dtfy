@@ -1,0 +1,16 @@
+name: "Security scan"
+on: [ push ]
+
+jobs:
+  run_scan:
+    runs-on: ubuntu-latest
+    name: A job to start a Detectify scan
+    steps:
+      - name: Start scan
+        uses: koslib/ga-dtfy@master
+        id: start_scan
+        with:
+          api_key: ${{ secrets.DETECTIFY_API_KEY }}
+          scan_profile_token: ${{ secrets.DETECTIFY_SCAN_PROFILE_TOKEN }}
+      - name: Start scan result
+        run: echo "Detectify responded with ${{ steps.start_scan.outputs.result }}"

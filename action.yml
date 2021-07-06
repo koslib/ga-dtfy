@@ -1,0 +1,22 @@
+name: "Github Action for scanning your prod-to-be assets with Detectify"
+description: "By integrating Detectify in your release process, you can ensure newly published assets are scanned.
+Also, you will stay informed of any new vulnerabilities after the scan finishes, to take appropriate action."
+branding:
+  icon: 'anchor'
+  color: 'blue'
+inputs:
+  api_key:
+    description: "Your Detectify.com API key"
+    required: true
+  scan_profile_token:
+    description: "Add your scan profile token here, as it is needed for automatically triggering the scan during the deployment"
+    required: True
+outputs:
+  result:
+    description: "Any output from Detectify's public API will be returned here"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.api_key }}
+    - ${{ inputs.scan_profile_token }}
