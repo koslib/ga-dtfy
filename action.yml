@@ -1,9 +1,8 @@
-name: "Github Action for scanning your prod-to-be assets with Detectify"
-description: "By integrating Detectify in your release process, you can ensure newly published assets are scanned.
-Also, you will stay informed of any new vulnerabilities after the scan finishes, to take appropriate action."
+name: "ga-dtfy"
+description: "Easily scan your assets with Detectify before shipping to production."
 branding:
-  icon: 'anchor'
-  color: 'blue'
+  icon: 'shield'
+  color: 'orange'
 inputs:
   api_key:
     description: "Your Detectify.com API key"
