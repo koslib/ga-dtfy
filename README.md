@@ -33,6 +33,8 @@ jobs:
 
 The example workflow file can be found also [here](.github/workflows/example.yml) which you can add into your GA config.
 
+> Note: an empty (blank-string) response but no error is a good sign! The scan has been triggered!
+
 # Config
 
 This Github Action requires two secrets set in your repository:
